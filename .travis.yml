@@ -8,7 +8,7 @@ script:
   - docker run zcl/react-test npm test -- --coverage
 #build with production image
 after_success:
-  - docker build -t /multi-client ./client
+  - docker build -t zcl/multi-client ./client
   - docker build -t zcl/multi-nginx ./nginx
   - docker build -t zcl/multi-server ./server
   - docker build -t zcl/multi-worker ./worker
@@ -17,9 +17,9 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Take those image and push them to the docker hub
-  - docker push chenleizhao/multi-client
-  - docker push chenleizhao/multi-nginx
-  - docker push chenleizhao/multi-server
-  - docker push chenleizhao/multi-worker
+  - docker push chenleizhao/zcl:zcl/multi-client
+  - docker push chenleizhao/zcl:zcl/multi-nginx
+  - docker push chenleizhao/zcl:zcl/multi-server
+  - docker push chenleizhao/zcl:zcl/multi-worker
 
 
