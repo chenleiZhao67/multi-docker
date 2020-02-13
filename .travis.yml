@@ -17,9 +17,9 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Take those image and push them to the docker hub
-  - docker push chenleizhao/zcl:zcl/multi-client
-  - docker push chenleizhao/zcl:zcl/multi-nginx
-  - docker push chenleizhao/zcl:zcl/multi-server
-  - docker push chenleizhao/zcl:zcl/multi-worker
+  - docker push zcl/multi-client
+  - docker push zcl/multi-nginx
+  - docker push zcl/multi-server
+  - docker push zcl/multi-worker
 
 
