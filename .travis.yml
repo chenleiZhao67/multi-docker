@@ -16,7 +16,7 @@ after_success:
 #Log in to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Take those image and push them to the docker hub
+# Take those image and push them to the docker hub, changed the password and username 
   - docker push zcl/multi-client
   - docker push zcl/multi-nginx
   - docker push zcl/multi-server
